@@ -1,6 +1,6 @@
-const seedComments = require('./category-seeds');
-const seedPosts = require('./product-seeds');
-const seedUsers = require('./tag-seeds');
+const seedComments = require('./comment-seeds');
+const seedPosts = require('./post-seeds');
+const seedUsers = require('./user-seeds');
 
 const sequelize = require('../config/connection');
 

@@ -5,4 +5,4 @@ const isAuthenticated = (req, res, next) => {
     return res.redirect('/')
 }
 
-Model.exports = isAuthenticated;
+module.exports = isAuthenticated;

@@ -3,7 +3,7 @@ const {
     DataTypes
 } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../db/config');
+const sequelize = require('../config/connection');
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -18,7 +18,7 @@ User.init({
         primaryKey: true,
         autoIncrement: true
     },
-    username: {
+    userName: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
