@@ -1,0 +1,37 @@
+:root {
+  --dark: #454545;
+  --light: #faf1e6;
+  --green: #7eca9c;
+}
+/* Navbar */
+.header {
+  background-color: var(--dark);
+  padding: 1.25rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.navbar-nav a {
+  color: var(--green);
+  font-size: 1.25rem;
+  margin: 0 1rem;
+}
+.navbar-nav a:hover {
+  color: var(--light);
+}
+.header-text {
+  background-color: var(--green);
+  border-radius: 25% 10%;
+}
+.header-text {
+  padding: 0.75rem 0.5rem;
+  margin-left: 1rem;
+  color: var(--dark);
+}
+.header-text:hover {
+  color: var(--light);
+}
+/* Navbar */
+
+body {
+  background-color: var(--light);
+}

@@ -40,6 +40,7 @@ router.get('/', isAuthenticated, async (req, res) => {
     }
 });
 
+//login
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
