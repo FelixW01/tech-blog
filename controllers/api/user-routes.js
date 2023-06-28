@@ -2,13 +2,12 @@ const router = require('express').Router();
 const {
     User,
 } = require('../../models');
-const isAuth = require('../../middleware/isAuthenticated')
 //signup user
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
         req.session.save(() => {
-            req.session.userId = userData.userId;
+            req.session.userId = userData.id;
             req.session.username = userData.username;
             req.session.loggedIn = true;
             res.status(200).json('Account created.')

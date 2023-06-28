@@ -7,10 +7,9 @@ const {
     Comment
 } = require('../models');
 
-
+//findAll posts from db
 router.get('/', async (req, res) => {
     try {
-        //findAll posts from db
         const postData = await Post.findAll({
             attributes: ['id', 'title', 'content', 'created_at'],
             include: [{
@@ -27,6 +26,7 @@ router.get('/', async (req, res) => {
                 },
             ],
         })
+        //gets clean data
         const posts = postData.map((post) => post.get({
             plain: true
         }))
@@ -43,9 +43,9 @@ router.get('/', async (req, res) => {
     }
 });
 
+//find one post, include Comment, User
 router.get('/post/:id', async (req, res) => {
     try {
-        //find one post
         const postData = await Post.findOne({
             where: {
                 id: req.params.id,
@@ -54,7 +54,7 @@ router.get('/post/:id', async (req, res) => {
             include: [{
                     model: Comment,
                     attributes: ['id', 'comment', 'post_id', 'user_id', 'created_at'],
-                    includes: {
+                    include: {
                         model: User,
                         attributes: ['username'],
                     },
@@ -66,6 +66,7 @@ router.get('/post/:id', async (req, res) => {
             ],
         });
         if (postData) {
+            //gets clean data
             const post = postData.get({
                 plain: true
             });

@@ -1,6 +1,6 @@
 const commentFormHandler = async event => {
     event.preventDefault();
-    const comment = document.querySelector('textarea[name="comment-body"]').value.trim();
+    const comment = document.querySelector('#comment').value.trim();
     const url = window.location.toString().split('/');
     const postId = url[url.length - 1];
 

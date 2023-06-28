@@ -5,15 +5,15 @@
 
 {{#if posts.length}}
 <section>
-    <h2>Your Posts</h2>
   {{#each posts as |post|}}
 
-    {{> post-content post}}
+    {{> dashboard-postedit post}}
 
   {{/each}}
 </section>
 {{/if}}
 
 
-<button type="submit" class="btn"><a class="new-post-btn" href="/dashboard/new">+ Add New Post</a></button>
+<a class="new-post-btn" href="/dashboard/new"><button type="submit" class="btn post-button">+ Add New Post</button>
+</a>
 </div>
