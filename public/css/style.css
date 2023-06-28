@@ -11,15 +11,15 @@
   flex-wrap: wrap;
 }
 .nav-link {
-  color: var(--green);
+  color: var(--light);
   font-size: 1.25rem;
   margin: 0 1rem;
 }
 .navbar-nav a:hover {
-  color: var(--light);
+  color: var(--green);
 }
 .header-text {
-  background-color: var(--green);
+  background-color: var(--light);
   border-radius: 25% 10%;
 }
 .header-text {
@@ -28,7 +28,7 @@
   color: var(--dark);
 }
 .header-text:hover {
-  color: var(--light);
+  color: var(--green);
 }
 /* Navbar */
 
@@ -40,4 +40,52 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+/* posts */
+.card-header {
+  background-color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+}
+.card-header a {
+  text-decoration: none;
+  margin-left: 1rem;
+  color: var(--light);
+}
+.card-header a:hover {
+  color: var(--green);
+}
+.card-header h4 {
+  margin-top: 1.5rem;
+}
+.card-header p {
+  margin: 1.5rem 1rem 0 0;
+  color: var(--light);
+}
+.card-body {
+  margin: 1.75rem 2.5rem;
+}
+.card-container {
+  border-style: solid;
+  margin: 1.75rem 2.5rem;
+}
+/* posts */
+
+.dashboard-container {
+  background-color: var(--dark);
+  padding: 1.5rem;
+}
+.dashboard-container h2 {
+  display: inline;
+  color: var(--dark);
+}
+.dashboard-box {
+  width: 25%;
+  background-color: var(--light);
+  border-radius: 10px;
+  text-align: center;
+  padding: 1.5rem;
+  margin-left: 1.25rem;
 }

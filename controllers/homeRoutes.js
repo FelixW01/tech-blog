@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
         const posts = postData.map((post) => post.get({
             plain: true
         }))
-        console.log(posts)
+        // console.log(posts)
         res.render('homepage', {
             posts,
             loggedIn: req.session.loggedIn,
@@ -41,6 +41,8 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
 
 router.get('/', (req, res) => {
 
