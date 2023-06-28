@@ -2,7 +2,8 @@
   <div class="comment-container">
     <div class="comment">
       <p class="comment-body">
-        {{user.username}}:
+        {{! why is it not rendering }}
+        {{user.username}}
         {{comment}}
         on
         {{formatDate created_at}}</p>
@@ -10,3 +11,4 @@
   </div>
 
 {{/each}}
+

@@ -79,6 +79,7 @@ router.get('/post/:id', async (req, res) => {
             res.status(404).json({
                 message: 'Invalid post id'
             })
+            return;
         }
     } catch (err) {
         console.log(err)

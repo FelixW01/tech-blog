@@ -1,19 +1,19 @@
+<div>
 <div class="dashboard-container">
   <div class="dashboard-box"><h2>Your Dashboard</h2></div>
 </div>
+
 {{#if posts.length}}
 <section>
     <h2>Your Posts</h2>
-    <ol>
   {{#each posts as |post|}}
-  <li>
+
     {{> post-content post}}
-  </li>
+
   {{/each}}
-  </ol>
 </section>
 {{/if}}
 
-<form id="newpost">
-  <button>+ New Post</button>
-</form>
+
+<button type="submit" class="btn"><a class="new-post-btn" href="/dashboard/new">+ Add New Post</a></button>
+</div>
