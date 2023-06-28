@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+const isAuth = require('../middleware/isAuthenticated')
 const {
     User,
     Post,
@@ -42,11 +43,47 @@ router.get('/', async (req, res) => {
     }
 });
 
-
-
-router.get('/', (req, res) => {
-
-    res.render('homepage');
+router.get('/post/:id', async (req, res) => {
+    try {
+        //find one post
+        const postData = await Post.findOne({
+            where: {
+                id: req.params.id,
+            },
+            attributes: ['id', 'content', 'title', 'created_at'],
+            include: [{
+                    model: Comment,
+                    attributes: ['id', 'comment', 'post_id', 'user_id', 'created_at'],
+                    includes: {
+                        model: User,
+                        attributes: ['username'],
+                    },
+                },
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+        });
+        if (postData) {
+            const post = postData.get({
+                plain: true
+            });
+            console.log(post);
+            res.render('single-post', {
+                post,
+                loggedIn: req.session.loggedIn,
+                username: req.session.username,
+            })
+        } else {
+            res.status(404).json({
+                message: 'Invalid post id'
+            })
+        }
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }
 });
 //login
 router.get('/login', (req, res) => {

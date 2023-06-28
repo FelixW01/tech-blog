@@ -1,0 +1,20 @@
+{{>post-content post}}
+
+<div>
+{{>comments post.comments}}
+</div>
+
+{{#if loggedIn}}
+<div class="comment-card">
+    <div class="comment-card-header"></div>
+        <form id="comment-form">
+        <p>Leave Comment: </p>
+        <textarea name="comment-body" id="comment" cols="50" rows="6"></textarea>
+        <div>
+       <button class="btn" id="comment-btn" type="submit">Submit</button>
+       </div>
+    </form>
+</div>
+{{/if}}
+
+
