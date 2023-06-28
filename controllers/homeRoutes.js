@@ -7,38 +7,40 @@ const {
 } = require('../models');
 
 
-// router.get('/', async (req, res) => {
-//     try {
-//         //findAll posts from db
-//         const postData = await Post.findAll({
-//             attributes: ['id', 'title', 'content', 'created_at'],
-//             include: [{
-//                     model: Comment,
-//                     attributes: ['id', 'comment', 'userId', 'postId', 'created_at'],
-//                     include: {
-//                         model: User,
-//                         attributes: ['user_name'],
-//                     },
-//                 },
-//                 {
-//                     model: User,
-//                     attributs: ['user_name'],
-//                 },
-//             ],
-//         })
-//         const posts = postData.map((post) => post.get({
-//             plain: true
-//         }))
-//         console.log(posts)
-//         res.render('homepage', {
-//             posts,
-//             logged_in: req.session.loggedIn
-//         });
-//     } catch (err) {
-//         console.log(err)
-//         res.status(500).json(err);
-//     }
-// });
+router.get('/', async (req, res) => {
+    try {
+        //findAll posts from db
+        const postData = await Post.findAll({
+            attributes: ['id', 'title', 'content', 'created_at'],
+            include: [{
+                    model: Comment,
+                    attributes: ['id', 'comment', 'userId', 'postId', 'created_at'],
+                    include: {
+                        model: User,
+                        attributes: ['username'],
+                    },
+                },
+                {
+                    model: User,
+                    attributs: ['username'],
+                },
+            ],
+        })
+        const posts = postData.map((post) => post.get({
+            plain: true
+        }))
+        console.log(posts)
+        res.render('homepage', {
+            posts,
+            loggedIn: req.session.loggedIn,
+            username: req.session.username,
+            userId: req.session.userId
+        });
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }
+});
 
 router.get('/', (req, res) => {
 
@@ -46,7 +48,7 @@ router.get('/', (req, res) => {
 });
 //login
 router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
