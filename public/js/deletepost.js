@@ -4,10 +4,16 @@ const deleteFormHandler = async event => {
     const postId = url[url.length - 1];
 
     const response = await fetch(`/api/posts/${postId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        body: JSON.stringify({
+            id: postId,
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        },
     });
     if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/dashboard/');
     } else {
         alert('Something went wrong!')
     }
