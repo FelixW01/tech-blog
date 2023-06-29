@@ -131,7 +131,7 @@ body {
   width: 94%;
 }
 .btn:hover {
-  color: var(--dark);
+  color: var(--green);
   background-color: var(--dark);
 }
 .comment-container {

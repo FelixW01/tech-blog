@@ -6,7 +6,7 @@ const deleteFormHandler = async event => {
     const response = await fetch(`/api/posts/${postId}`, {
         method: 'DELETE',
         body: JSON.stringify({
-            id: postId,
+            postId: id,
         }),
         headers: {
             "Content-Type": "application/json",

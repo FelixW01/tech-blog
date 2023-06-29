@@ -45,19 +45,13 @@ router.put('/:id', isAuth, async (req, res) => {
     }
 
 })
-// const commentData = await Comment.destroy({
-//     where: {
-//         postId: req.params.id
-//     },
-// });
 
 //Deletes post
 router.delete('/:id', isAuth, async (req, res) => {
     try {
         const postData = await Post.destroy({
             where: {
-                id: req.params.id,
-                userId: req.session.userId,
+                id: req.params.id
             },
         });
         if (!postData) {
@@ -66,6 +60,7 @@ router.delete('/:id', isAuth, async (req, res) => {
             });
             return;
         }
+        console.log('Post has been deleted')
         res.status(200).json(postData);
     } catch (err) {
         console.log(err)
