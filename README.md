@@ -2,26 +2,21 @@
 
 https://github.com/FelixW01/tech-blog
 
-# Application Link
-
-https://young-spire-72591-cf24cca61289.herokuapp.com/
-
-![young-spire-72591-cf24cca61289 herokuapp com_](https://github.com/FelixW01/tech-blog/assets/90164142/9bab5449-03a5-4f0c-9290-4c6711207209)
-
-
-
 # Description
 
 This web application is a blog page style forum where users can post, view and write coments collectively. This app was created to provide a platform for people looking for a tech forum hub.
 
 # Table of Contents
-
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
+
+# Application Demo
+![young-spire-72591-cf24cca61289 herokuapp com_](https://github.com/FelixW01/tech-blog/assets/90164142/9bab5449-03a5-4f0c-9290-4c6711207209)
 
 # Installation
 
